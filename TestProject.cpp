@@ -35,11 +35,12 @@ int main()
         {
             infile.open(filename);
             string filetext;
+            int total = 0;
             while (getline(infile, filetext))
             {
-                cout << CatCount(filetext) << endl;
+                total += CatCount(filetext);
             }
-            cout << endl;
+            cout << total << endl;
         }
     }
     else if (choice == 2)
