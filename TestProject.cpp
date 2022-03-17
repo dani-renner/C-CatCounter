@@ -33,6 +33,12 @@ int main()
         else
         {
             infile.open(filename);
+            string filetext;
+            while (getline(infile, filetext))
+            {
+                cout << filetext << endl;
+            }
+            cout << endl;
         }
     }
     else if (choice == 2)
