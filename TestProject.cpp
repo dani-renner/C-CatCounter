@@ -50,5 +50,7 @@ int main()
         getline (cin >> ws, input);
         cout << CatCount (input);
     }
-
+    else {
+        main();
+    }
 }
