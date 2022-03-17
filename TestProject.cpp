@@ -4,13 +4,14 @@
 
 using namespace std;
 
-int catcount (string s, string c)
+int CatCount (string s)
 {
     int occurrences = 0;
+    string cat = "cat";
     string::size_type pos = 0;
-    while ((pos = s.find(c, pos)) != string::npos) {
+    while ((pos = s.find(cat, pos)) != string::npos) {
         ++occurrences;
-        pos += c.length();
+        pos += cat.length();
     }
     return occurrences;
 }
@@ -36,7 +37,7 @@ int main()
             string filetext;
             while (getline(infile, filetext))
             {
-                cout << filetext << endl;
+                cout << CatCount(filetext) << endl;
             }
             cout << endl;
         }
@@ -46,7 +47,7 @@ int main()
         string input;
         cout << "Please enter a string.\n";
         getline (cin >> ws, input);
-        cout << catcount (input, "cat");
+        cout << CatCount (input);
     }
 
 }
