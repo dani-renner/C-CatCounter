@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "CatCounter.h"
+
 using namespace std;
 
-int count(string s, string c)
+int catcount (string s, string c)
 {
     int occurrences = 0;
     string::size_type pos = 0;
@@ -17,18 +17,30 @@ int count(string s, string c)
 
 int main()
 {
-    ifstream infile;
-    if (infile.fail())
+    int choice;
+    cout << "enter 1 to read a file or 2 to enter input in this console" << endl;
+    cin >> choice;
+    if (choice == 1)
     {
-        cout << "file cannot be read.";
+        string filename;
+        ifstream infile;
+        cout << "Enter file name\n";
+        getline (cin >> ws, filename);
+        if (infile.fail())
+        {
+            cout << "file cannot be read.\n";
+        }
+        else
+        {
+            infile.open(filename);
+        }
     }
-    else
+    else if (choice == 2)
     {
+        string input;
+        cout << "Please enter a string.\n";
+        getline (cin >> ws, input);
+        cout << catcount (input, "cat");
+    }
 
-    }
-    string input ;
-    cout << "Please enter a string.\n";
-    getline (cin, input);
-    cout << count(input, "cat");
-    
 }
